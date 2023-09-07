@@ -20,3 +20,6 @@ DB_DATABASE: Nome do banco de dados que desejamos acessar.
 
 Com esses dados, incorporados em nosso código PHP presente no arquivo, conseguimos estabelecer a conexão necessária para utilizar nosso banco de dados no RDS com sucesso.
 </p>
+
+<h4>Link para o video explicativo</h4>
+<p> https://drive.google.com/file/d/1YHbRREn304UsQPhWfosNCShUJcxXwfxR/view?usp=sharing </p>
