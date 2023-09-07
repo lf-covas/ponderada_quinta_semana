@@ -1,5 +1,5 @@
 <?php 
-require "./dbinfo.inc"; 
+require "../inc/dbinfo.inc"; 
 ?>
 <html>
 <body>
@@ -132,12 +132,13 @@ while($query_data = mysqli_fetch_row($result)) {
 $result2 = mysqli_query($connection, "SELECT * FROM DATA_EMPLOYEES");
 
 while($query_data2 = mysqli_fetch_row($result2)) {
+  
   echo "<tr>";
   echo "<td>",$query_data2[0], "</td>",
        "<td>",$query_data2[1], "</td>",
        "<td>",$query_data2[2], "</td>",
        "<td>",$query_data2[3], "</td>",
-       "<td>",$query_data2[4], "</td>";
+       "<td>",toMarried($query_data2[4]), "</td>";
   echo "</tr>";
 }
 ?>
@@ -202,7 +203,7 @@ function VerifyDataEmployeesTable($connection, $dbName) {
         $query = "CREATE TABLE DATA_EMPLOYEES (
             id_data_employees int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             CPF VARCHAR(11),
-            IDADE int(3),
+            IDADE INT(3),
             BIRTH_DATE DATE,
             MARRIED TINYINT
           )";
@@ -210,6 +211,11 @@ function VerifyDataEmployeesTable($connection, $dbName) {
        if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>");
     }
   }
+
+function toMarried($value){
+  if ($value == 1) return "Sim";
+  return "Não";
+}
 
 /* Check for the existence of a table. */
 function TableExists($tableName, $connection, $dbName) {

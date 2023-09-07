@@ -11,8 +11,11 @@ Além disso, dentro desse mesmo arquivo, você encontrará o código responsáve
 <p>O arquivo "dbinfo.inc" desempenha um papel fundamental ao estabelecer a conexão entre nosso arquivo "SamplePage.php" (responsável pelo frontend e backend) hospedado em uma EC2 na AWS e nosso banco de dados, que reside em um RDS também na AWS. Este arquivo contém as seguintes informações essenciais:
 
 DB_SERVER: Endereço do endpoint onde nosso banco de dados está localizado.
+
 DB_USERNAME: Nome de usuário utilizado para acessar o banco de dados.
+
 DB_PASSWORD: Senha cadastrada para autenticar o acesso ao banco de dados.
+
 DB_DATABASE: Nome do banco de dados que desejamos acessar.
 
 Com esses dados, incorporados em nosso código PHP presente no arquivo, conseguimos estabelecer a conexão necessária para utilizar nosso banco de dados no RDS com sucesso.
